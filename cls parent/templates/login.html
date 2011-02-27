@@ -1,0 +1,14 @@
+{% extends "cls_base.html" %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+	<div>
+		<form method = "POST" action="">
+			<label for = "username">username: {{form.username}}</label>
+			<label for = "password">password: {{form.password}}</label>
+			<input type = "submit" value = "login"/>
+		</form>
+	</div>
+{% endblock %}
+	

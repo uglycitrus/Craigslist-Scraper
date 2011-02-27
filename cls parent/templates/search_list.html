@@ -1,0 +1,16 @@
+{% extends "cls_base.html" %}
+
+
+{% block content %}
+	<div>
+		<table>
+			{% for i in list %}
+			<tr>
+				<td><a href="{% url result_list i.id %}">{{i.title}}</a></td>
+				<td>{{i.user}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}
+	

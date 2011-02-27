@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<title>Craigslist Scraper</title>
+	</head>
+	
+	<body>
+		<div id="root">
+			<div id="header">
+				{% block header %}
+					<ul>
+						<li><a href="{% url search_new %}">Start a New Search</a></li>
+						<li><a href="{% url search_list %}">View all Searches</a></li>
+						<li><a href="{% url logout %}">logout</a></li>
+						<li>logged in as {{user}}</li>
+					</ul>
+				{% endblock %}
+			</div>
+
+			<div id="content">
+			{% block content%}{%endblock%}
+			</div>
+		</div>
+	</body>
+</html>
