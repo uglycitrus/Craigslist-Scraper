@@ -1,3 +1,5 @@
+import os
+
 from django.conf.urls.defaults import *
 
 # Uncomment the next two lines to enable the admin:
@@ -22,3 +24,8 @@ urlpatterns = patterns('cls.scraper.views',
 	# Uncomment the next line to enable the admin:
 	(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += patterns('',
+        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': os.path.split(os.path.split(os.path.dirname(os.path.abspath(__file__)))[0])[0]+'/static_media'}),
+    )
+

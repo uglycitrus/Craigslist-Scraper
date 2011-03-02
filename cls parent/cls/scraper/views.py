@@ -50,7 +50,12 @@ def result_list(request, id):
 	search = get_object_or_404(Search, id = id)
 	user = request.user
 	list = search.result_set.all()
-	return render_to_response('result_list.html', {'list':list, 'user':user})
+	graph = []
+	count = 0
+	for i in list:
+		count = count + 1
+		if i.price: graph.append([count ,int(i.price)])
+	return render_to_response('result_list.html', {'list':list, 'user':user, 'graph':graph})
 
 @login_required
 def search_new(request):

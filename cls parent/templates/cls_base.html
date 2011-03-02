@@ -3,18 +3,23 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<title>Craigslist Scraper</title>
+		<link rel="shortcut icon" href="/site_media/images/scraper.ico" />
+		<link rel="stylesheet" type="text/css" href="/site_media/styles/styles.css" />
 	</head>
 	
 	<body>
 		<div id="root">
 			<div id="header">
+				<img id="logo" alt="bot" height="200" src="/site_media/images/bot.png">
 				{% block header %}
+					<div id="links">
 					<ul>
 						<li><a href="{% url search_new %}">Start a New Search</a></li>
 						<li><a href="{% url search_list %}">View all Searches</a></li>
 						<li><a href="{% url logout %}">logout</a></li>
 						<li>logged in as {{user}}</li>
 					</ul>
+					</div>
 				{% endblock %}
 			</div>
 
@@ -23,4 +28,5 @@
 			</div>
 		</div>
 	</body>
+
 </html>
