@@ -66,7 +66,10 @@ def search_new(request):
 		form = SearchEditForm(request.POST, instance=search)
 		if form.is_valid():
 			search = form.save()
-	return HttpResponseRedirect( reverse('search_list'))
+		return HttpResponseRedirect( reverse('search_list'))
+	else:
+		return render_to_response('form.html', {'form': form})
+
 
 @login_required
 def user_edit(request):
