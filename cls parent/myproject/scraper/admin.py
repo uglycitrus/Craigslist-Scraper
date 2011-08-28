@@ -1,5 +1,5 @@
-from cls.scraper.models import Search
-from cls.scraper.models import Result
+from myproject.scraper.models import Search
+from myproject.scraper.models import Result
 
 from django.contrib import admin
 
