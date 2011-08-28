@@ -19,7 +19,6 @@ div#links li
 	padding-top:80px;
 	float:left;
 	width:20%;	/* width of all menu boxes */
-	height:100%;
 	margin-left: auto;
 	margin-right: auto;
 	text-align:center;
@@ -33,14 +32,7 @@ div#links ul li:hover						/* menu on mouse-over  */
 
 div#content
 {
-	width:75em;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-div#content
-{
-	width:50em;
+	width:70%;
 	margin-left: auto;
 	margin-right: auto;
 }

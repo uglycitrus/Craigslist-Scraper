@@ -10,7 +10,7 @@ class Search(models.Model):
 	title = models.CharField("Title", max_length = 200)
 	status = models.CharField("Status", max_length = 20, null = True, blank = True)
 	search_url = models.CharField("URL", max_length = 200)
-	start_date = models.DateField()
+	start_date = models.DateField(auto_now=True)
 	end_date = models.DateField(null = True, blank = True)
 
 #	class Meta:

@@ -5,12 +5,12 @@ from django.contrib.auth import authenticate, login, logout
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect, HttpResponse
 
-from cls.scraper.models import Search
-from cls.scraper.models import Result
+from myproject.scraper.models import Search
+from myproject.scraper.models import Result
 
-from cls.scraper.forms import SearchEditForm
-from cls.scraper.forms import UserEditForm
-from cls.scraper.forms import LogInForm
+from myproject.scraper.forms import SearchEditForm
+from myproject.scraper.forms import UserEditForm
+from myproject.scraper.forms import LogInForm
 
 def login_view(request):
 	# forward the user to the welcome page if they are logged in
@@ -62,11 +62,11 @@ def search_new(request):
 	user = request.user
 	form = SearchEditForm()
 	if request.method == 'POST':
-		form = SearchEditForm(request.POST)
+		search = Search(user = request.user)
+		form = SearchEditForm(request.POST, instance=search)
 		if form.is_valid():
-			search = SearchEditFormHandler(form)
-			
-	return render_to_response('form.html', {'form':form, 'user':user})
+			search = form.save()
+	return HttpResponseRedirect( reverse('search_list'))
 
 @login_required
 def user_edit(request):

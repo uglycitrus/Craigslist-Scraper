@@ -6,7 +6,7 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('cls.scraper.views',
+urlpatterns = patterns('myproject.scraper.views',
 	url(r'^accounts/login/$', 'login_view', name = 'login'),
 	url(r'^accounts/logout/$', 'logout_view', name = 'logout'),
 	url(r'^accounts/edit/$', 'user_edit', name = 'user_edit'),

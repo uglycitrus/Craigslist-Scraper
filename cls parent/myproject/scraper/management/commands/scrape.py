@@ -4,7 +4,7 @@ import datetime
 
 from django.core.management.base import BaseCommand, CommandError
 
-from cls.scraper.models import Search, Result
+from myproject.scraper.models import Search, Result
 
 class Command(BaseCommand):
 	args = 'No arguments'
